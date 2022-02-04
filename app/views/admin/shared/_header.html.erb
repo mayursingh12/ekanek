@@ -1,0 +1,19 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="<%= admin_dashboard_path %>">
+      Ekanek
+    </a>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <div class="d-flex">
+          <% if current_user.present? %>
+            <%= button_to 'Sign out', admin_logout_path, method: :delete, class: "btn btn-sm btn-outline-danger" %>
+          <% else %>
+            <%= link_to 'SignIn', admin_login_path, method: :get, class: "nav-link " %>
+            <%= link_to 'SignUp', admin_register_path, method: :get, class: "nav-link " %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
